@@ -49,10 +49,14 @@ main {
 
 
   nav {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 0.7rem;
+    padding: 2rem 3rem;
 
     .nav-elem:nth-child(2) {
       i {
@@ -61,10 +65,8 @@ main {
     }
 
     svg {
-      min-width: 5rem;
-      ;
-      width: 50%;
-      height: 50%;
+      width: 12rem;
+      height: auto;
     }
   }
 
@@ -137,6 +139,9 @@ main {
 }
 
 #section-2 {
+  min-height: unset;
+  padding-block: 4rem;
+
   .titles {
     display: flex;
     flex-direction: column;
@@ -144,31 +149,37 @@ main {
 
     .title {
       display: flex;
-      gap: 4rem;
-      margin-block: 1rem;
+      align-items: baseline;
+      gap: 2rem;
+      padding-block: 0.6rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
       opacity: 0.5;
       transition: all 0.3s linear;
       cursor: pointer;
 
       h1 {
         font-size: 5rem;
-        font-weight: 1;
+        font-weight: 100;
         line-height: 1;
       }
 
       small {
-        margin-top: 0.6rem;
-        font-size: 1rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        opacity: 0.7;
+        width: 10rem;
+        flex-shrink: 0;
       }
+    }
 
-
+    .title:last-child {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .title:hover {
       opacity: 1;
     }
-
-
   }
 }
 
@@ -237,4 +248,275 @@ main:has(#section-2 .title[img-title="opera"]:hover) .images #opera {
   opacity: 1;
   background-color: rgb(4, 7, 24);
 
+}
+
+
+#section-3 {
+  min-height: unset;
+  padding-block: 5rem;
+  padding-inline: 3rem;
+  position: relative;
+  z-index: auto;
+
+  .top,.bottom{
+    display: flex;
+    width: 100%;
+  }
+
+  .left,.right{
+    width: 50%;
+  
+  }
+
+  .top .left{
+    text-align: left;
+    position: relative;
+    z-index: 0;
+    
+    small {
+      font-size: 0.7rem;
+      letter-spacing: 0.2rem;
+      opacity: 0.5;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      display: block;
+    }
+
+    h3 {
+      font-size: 3rem;
+      font-weight: 200;
+      line-height: 1.1;
+      margin-top: 0;
+    }
+  }                           
+
+
+  .bottom .right{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 2rem;
+    position: relative;
+    z-index: 2;
+
+    .experience-block {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+
+      .exp-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+
+        .exp-role {
+          font-weight: 600;
+          font-size: 0.95rem;
+        }
+
+        .exp-company {
+          font-weight: 300;
+          font-size: 0.95rem;
+          opacity: 0.7;
+        }
+
+        .exp-date {
+          font-size: 0.75rem;
+          opacity: 0.4;
+          letter-spacing: 0.05rem;
+          white-space: nowrap;
+        }
+      }
+    }
+    
+    .text-columns {
+      display: flex;
+      gap: 2rem;
+      
+      p {
+        flex: 1;
+        opacity: 0.6;
+        font-weight: 300;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin: 0;
+        z-index: 4;
+
+        strong {
+          opacity: 1;
+          font-weight: 500;
+          color: white;
+        }
+      }
+    }
+
+    .discover-btn {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      border-bottom: 2px solid red;
+      padding-bottom: 0.5rem;
+      width: fit-content;
+      margin-top: 1rem;
+    }
+  }
+
+  .bottom .left {
+    padding-top: 2rem;
+    padding-right: 3rem;
+
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.5rem;
+
+      .skill-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+
+        .skill-label {
+          font-size: 0.65rem;
+          letter-spacing: 0.15rem;
+          text-transform: uppercase;
+          opacity: 0.4;
+        }
+
+        .skill-value {
+          font-size: 0.85rem;
+          font-weight: 300;
+          opacity: 0.85;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+}
+
+#footer {
+  padding-block: 5rem 2rem;
+  padding-inline: 3rem;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  .footer-top {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .slogan {
+    font-family: serif;
+    font-size: 2.5rem;
+    font-weight: 200;
+    line-height: 1;
+    text-align: right;
+  }
+
+  .footer-middle {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .locations {
+    display: flex;
+    gap: 8rem;
+    font-size: 2rem;
+    font-weight: 200;
+
+    .dot {
+      color: red;
+    }
+  }
+
+  .socials {
+    font-size: 0.8rem;
+    font-weight: 200;
+    opacity: 0.7;
+    letter-spacing: 0.1rem;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    a:hover {
+      opacity: 1;
+    }
+  }
+
+  .footer-bottom-line {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: -2rem;
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+
+    .contact, .legal {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .faded {
+      opacity: 0.5;
+    }
+
+    .dash {
+      opacity: 0.2;
+    }
+
+    .email, .language {
+      font-weight: 500;
+    }
+
+    a.email {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+
+    a.email:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.audio-toggle {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.audio-toggle:hover {
+  border-color: rgba(255, 255, 255, 0.8);
 }

@@ -142,7 +142,7 @@ const Dog = () => {
             y: "-=0.05"
 
 
-        }, "thord")
+        }, "third")
 
 
     }, [dogModel])
@@ -202,32 +202,6 @@ const Dog = () => {
         document.querySelector(`.title[img-title="kikk"]`).addEventListener("mouseenter", () => {
 
             material.current.uMatcap1.value = mat10
-            
-            gsap.to(material.current.uProgress, {
-                value: 0.0,
-                duration: 0.3,
-                onComplete: () => {
-                    material.current.uMatcap2.value = material.current.uMatcap1.value
-                    material.current.uProgress.value = 1.0
-                }
-            })
-        })
-        document.querySelector(`.title[img-title="kennedy"]`).addEventListener("mouseenter", () => {
-
-            material.current.uMatcap1.value = mat8
-            
-            gsap.to(material.current.uProgress, {
-                value: 0.0,
-                duration: 0.3,
-                onComplete: () => {
-                    material.current.uMatcap2.value = material.current.uMatcap1.value
-                    material.current.uProgress.value = 1.0
-                }
-            })
-        })
-        document.querySelector(`.title[img-title="opera"]`).addEventListener("mouseenter", () => {
-
-            material.current.uMatcap1.value = mat13
             
             gsap.to(material.current.uProgress, {
                 value: 0.0,
