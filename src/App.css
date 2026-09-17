@@ -16,7 +16,6 @@ body,
 section {
 
   min-height: 100vh;
-  border: 2px solid white;
   position: relative;
   z-index: 2;
 
@@ -146,7 +145,7 @@ main {
     .title {
       display: flex;
       gap: 4rem;
-      padding-block: 1rem;
+      margin-block: 1rem;
       opacity: 0.5;
       transition: all 0.3s linear;
       cursor: pointer;
