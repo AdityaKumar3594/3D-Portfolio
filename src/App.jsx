@@ -3,6 +3,7 @@ import './App.css'
 import Dog from './components/Dog'
 import { Canvas } from '@react-three/fiber'
 import Section1 from './components/section-1'
+import Section2 from './components/section-2'
 
 function App() {
 
@@ -23,34 +24,12 @@ function App() {
           <Dog />
         </Canvas>
       <Section1 />
-      <section id="section-2">
-        <div className="titles">
-          <div img-title="tomorrowland" className="title">
-            <small>2026 — CVPRW / PYTORCH</small>
-            <h1>Nighttime Dehazing</h1>
-          </div>
-          <div img-title="navy-pier" className="title">
-            <small>2026 — LANGCHAIN / MISTRAL</small>
-            <h1>Multi-Agent Research</h1>
-          </div>
-          <div img-title="msi-chicago" className="title">
-            <small>2026 — PYTORCH / NLP</small>
-            <h1>Plagiarism Detector</h1>
-          </div>
-          <div img-title="phone" className="title">
-            <small>2025 — MERN / GENAI</small>
-            <h1>Resume AI Coach</h1>
-          </div>
-          <div img-title="kikk" className="title">
-            <small>2025 — FASTAPI / STREAMLIT</small>
-            <h1>Movie Recommender</h1>
-          </div>
-        </div>
-      </section>
+      <Section2 />
+
       <section id="section-3">
         <div className="top">
           <div className="left">
-            <small>EXPERIENCE & SKILLS</small>
+            <small>SKILLS</small>
             <h3>
               Crafting scalable <br /> AI solutions <br />& intelligent <br /> software <br /> architectures.
             </h3>
@@ -88,6 +67,8 @@ function App() {
           </div>
           <div className="right">
             <div className="experience-block">
+              <small>Experience</small>
+
               <div className="exp-header">
                 <div>
                   <span className="exp-role">AI Engineering Intern</span>

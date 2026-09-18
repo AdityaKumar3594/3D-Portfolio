@@ -171,6 +171,8 @@ const Dog = () => {
             "msi-chicago":  mat9,
             "phone":        mat12,
             "kikk":         mat10,
+            "kennedy":         mat17,
+            "opera":         mat13,
         };
 
         const listeners = [];
