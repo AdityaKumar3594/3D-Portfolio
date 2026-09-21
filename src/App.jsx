@@ -1,11 +1,32 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Dog from './components/Dog'
 import { Canvas } from '@react-three/fiber'
-import Section1 from './components/section-1'
-import Section2 from './components/section-2'
+import Section1 from './components/Section1'
+import Section2 from './components/Section2'
+import Section3 from './components/Section3'
+import Footer from './components/footer'
+import DogLoader from './components/DogLoader'
 
 function App() {
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const minDelay = new Promise(resolve => setTimeout(resolve, 2500))
+
+    const pageLoad = new Promise(resolve => {
+      if (document.readyState === 'complete') {
+        resolve()
+      } else {
+        window.addEventListener('load', resolve, { once: true })
+      }
+    })
+
+    // Wait for both: at least 2s AND the page to finish loading
+    Promise.all([minDelay, pageLoad]).then(() => setLoading(false))
+  }, [])
+
+  if (loading) return <DogLoader />
 
   return (
     <>
@@ -25,99 +46,10 @@ function App() {
         </Canvas>
       <Section1 />
       <Section2 />
-
-      <section id="section-3">
-        <div className="top">
-          <div className="left">
-            <small>SKILLS</small>
-            <h3>
-              Crafting scalable <br /> AI solutions <br />& intelligent <br /> software <br /> architectures.
-            </h3>
-          </div>
-          <div className="right"></div>
-        </div>
-        <div className="bottom">
-          <div className="left">
-            <div className="skills-list">
-              <div className="skill-group">
-                <span className="skill-label">Languages</span>
-                <span className="skill-value">Python · JavaScript · SQL · Java</span>
-              </div>
-              <div className="skill-group">
-                <span className="skill-label">AI / ML</span>
-                <span className="skill-value">PyTorch · LangChain · RAG · LLMs · Transformers · FAISS · Ollama · Qwen3</span>
-              </div>
-              <div className="skill-group">
-                <span className="skill-label">Frontend</span>
-                <span className="skill-value">React.js · HTML5 · CSS3 · Streamlit</span>
-              </div>
-              <div className="skill-group">
-                <span className="skill-label">Backend</span>
-                <span className="skill-value">FastAPI · Node.js · Express.js · REST APIs</span>
-              </div>
-              <div className="skill-group">
-                <span className="skill-label">Databases</span>
-                <span className="skill-value">MongoDB · MySQL</span>
-              </div>
-              <div className="skill-group">
-                <span className="skill-label">Cloud & DevOps</span>
-                <span className="skill-value">AWS · Docker · Git · GitHub</span>
-              </div>
-            </div>
-          </div>
-          <div className="right">
-            <div className="experience-block">
-              <small>Experience</small>
-
-              <div className="exp-header">
-                <div>
-                  <span className="exp-role">AI Engineering Intern</span>
-                  <span className="exp-company"> — Indian Navy</span>
-                </div>
-                <span className="exp-date">Jul 2026 – Aug 2026 · Chennai</span>
-              </div>
-              <div className="text-columns">
-                <p>Built a <strong>Local RAG system</strong> using Python, FastAPI, FAISS, BM25, Ollama, and Qwen3 to enable semantic search with citation-backed responses over confidential organizational documents.</p>
-                <p>Developed a <strong>Department-wise Task Monitoring Dashboard</strong> (MERN) with JWT auth, role-based access control, analytics, and progress tracking to improve workflow visibility across departments.</p>
-              </div>
-            </div>
-            <a href="#" className="discover-btn">Download Resume</a>
-          </div>
-        </div>
-      </section>
-      <footer id="footer">
-        <div className="footer-top">
-          <div className="slogan">
-            Let's<br/>Build<br/>Something<br/>Great
-          </div>
-        </div>
-        <div className="footer-middle">
-          <div className="locations">
-            <span>Chennai<span className="dot">.</span></span>
-            <span>India<span className="dot">.</span></span>
-          </div>
-          <div className="socials">
-            <a href="https://github.com/AdityaKumar3594" target="_blank" rel="noreferrer">GitHub</a>
-            {" / "}
-            <a href="https://www.linkedin.com/in/aditya-kumar-snu/" target="_blank" rel="noreferrer">LinkedIn</a>
-            {" / "}
-            <a href="https://leetcode.com/u/aditya-kumar3594/" target="_blank" rel="noreferrer">LeetCode</a>
-          </div>
-        </div>
-        <div className="footer-bottom-line"></div>
-        <div className="footer-bottom">
-          <div className="contact">
-            <span className="faded">Get in touch</span>
-            <span className="dash">—</span>
-            <a href="mailto:camp25674@gmail.com" className="email">camp25674@gmail.com</a>
-          </div>
-          <div className="legal">
-            <span className="faded">+91 63061 55698</span>
-            <span className="language">Aditya Kumar 2026</span>
-          </div>
-        </div>
-      </footer>
+      <Section3 />
+      <Footer />
       </main>
+    
     </>
   )
 }
