@@ -1,39 +1,67 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
-export default function Section2()
-{
+const projects = [
+  {
+    imgTitle: "tomorrowland",
+    eyebrow: "2026 — CVPRW / PYTORCH",
+    title: "Nighttime Dehazing",
+    path: "/projects/dehazing",
+  },
+  {
+    imgTitle: "navy-pier",
+    eyebrow: "2026 — LANGCHAIN / MISTRAL",
+    title: "Multi-Agent Research",
+    path: "/projects/multi-agent",
+  },
+  {
+    imgTitle: "msi-chicago",
+    eyebrow: "2026 — PYTORCH / NLP",
+    title: "Plagiarism Detector",
+    path: "/projects/plagiarism",
+  },
+  {
+    imgTitle: "phone",
+    eyebrow: "2025 — MERN / GENAI",
+    title: "Resume AI Coach",
+    path: "/projects/resume-ai",
+  },
+  {
+    imgTitle: "kikk",
+    eyebrow: "2025 — FASTAPI / STREAMLIT",
+    title: "Movie Recommender",
+    path: "/projects/movie-recommender",
+  },
+  {
+    imgTitle: "kennedy",
+    eyebrow: "2026 — Ongoing",
+    title: "Kennedy Club",
+    path: "/projects/kennedy-club",
+  },
+  {
+    imgTitle: "opera",
+    eyebrow: "2026 — Ongoing",
+    title: "Royal Opera",
+    path: "/projects/royal-opera",
+  },
+];
+
+export default function Section2() {
   return (
     <section id="section-2">
-        <div className="titles">
-          <div img-title="tomorrowland" className="title">
-            <small>2026 — CVPRW / PYTORCH</small>
-            <h1>Nighttime Dehazing</h1>
-          </div>
-          <div img-title="navy-pier" className="title">
-            <small>2026 — LANGCHAIN / MISTRAL</small>
-            <h1>Multi-Agent Research</h1>
-          </div>
-          <div img-title="msi-chicago" className="title">
-            <small>2026 — PYTORCH / NLP</small>
-            <h1>Plagiarism Detector</h1>
-          </div>
-          <div img-title="phone" className="title">
-            <small>2025 — MERN / GENAI</small>
-            <h1>Resume AI Coach</h1>
-          </div>
-          <div img-title="kikk" className="title">
-            <small>2025 — FASTAPI / STREAMLIT</small>
-            <h1>Movie Recommender</h1>
-          </div>
-          <div img-title="kennedy" className="title">
-            <small>2025 — FASTAPI / STREAMLIT</small>
-            <h1>Kennedy Club</h1>
-          </div>
-          <div img-title="opera" className="title">
-            <small>2025 — FASTAPI / STREAMLIT</small>
-            <h1>Royal Opera</h1>
-          </div>
-        </div>
-      </section>
+      <div className="titles">
+        {projects.map(({ imgTitle, eyebrow, title, path }) => (
+          <Link
+            key={imgTitle}
+            to={path}
+            img-title={imgTitle}
+            className="title"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <small>{eyebrow}</small>
+            <h1>{title}</h1>
+          </Link>
+        ))}
+      </div>
+    </section>
   );
 }
